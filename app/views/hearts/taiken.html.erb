@@ -1,0 +1,20 @@
+<% @taiken.each do |t| %>
+    <div class="heart">
+        <%= t.user.email %>
+            <%= t.body %>
+            <%= link_to "詳細へ", heart_path(t.id) %>
+        <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %>
+                <%= link_to heart_like_path(id: t.id, heart_id: t.id), method: :delete do %>
+                    <p>いいねを取り消す</p><%= t.likes.count %>
+                <% end %>
+            <% else %>
+                <%= link_to heart_likes_path(id: t.id, heart_id: t.id), method: :post do %>
+                    <p>いいね</p><%= t.likes.count %>
+                <% end %>
+            <% end %>
+        <% else %>
+            <p>いいねの数 = </p><%= t.likes.count %>
+        <% end %>
+    </div>
+<% end %>

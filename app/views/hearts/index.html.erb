@@ -1,0 +1,78 @@
+<h1>今日のあなたの元気度は？</h1>
+<h3>こころとからだのチェックリスト</h3>
+<%= link_to "✿診断を始める✿", new_mind_path, class: "link" %>
+<p>自分の気持ちをシェアしよう</p>
+<%= link_to "みんなのつぶやき", hearts_tsubuyaki_path %>
+<p>自分の体験をシェアしよう</p>
+<%= link_to "おすすめの場所", hearts_taiken_path %>
+
+
+
+<h3>記録カレンダー</h3>
+<div style="width: 800px; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;"> 
+  <button id="prevButtorails sn">&lt;</button>
+  <canvas id="genkiChart"></canvas> 
+  <button id="nextButton">&gt;</button>
+</div>
+
+<style>
+  #prevButton, #nextButton {
+    background-color: transparent; 
+    border: none; 
+    color: rgba(75, 192, 192, 1); 
+    font-size: 20px; 
+    cursor: pointer; 
+  }
+</style>
+
+<script>
+  const ctx = document.getElementById('genkiChart').getContext('2d');
+  const chartData = <%= @chart_data.to_json.html_safe %>;
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: chartData.map(data => data.date),
+      datasets: [{
+        label: 'genki',
+        data: chartData.map(data => data.value),
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      spanGaps: true, 
+      scales: {
+        x: {
+          ticks: {
+            autoSkip: false, 
+            maxRotation: 0, 
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 5,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+
+  const prevButton = document.getElementById('prevButton');
+  const nextButton = document.getElementById('nextButton');
+  let offset = <%= params[:offset].to_i || 0 %>;
+
+  prevButton.addEventListener('click', () => {
+    offset += 7; 
+    window.location.href = `?offset=${offset}`;
+  });
+
+  nextButton.addEventListener('click', () => {
+    offset -= 7; 
+    if (offset < 0) offset = 0; 
+    window.location.href = `?offset=${offset}`;
+  });
+</script>
+

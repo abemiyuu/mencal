@@ -1,0 +1,30 @@
+<h1>Smile</h1>
+<h3>Heart詳細</h3>
+<div class="smile">
+  <p><%= @heart.body %></p>
+  <p><%= @heart.created_at %></p>
+  <% if user_signed_in? %>
+  <% if current_user.already_liked?(@heart) %>
+    <%= link_to heart_like_path(@heart), method: :delete do %>
+      <p>いいねを取り消す</p><%= @heart.likes.count %>
+    <% end %>
+  <% else %>
+    <%= link_to heart_likes_path(@heart), method: :post do %>
+      <p>いいね</p><%= @heart.likes.count %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>いいねの数 = </p><%= @heart.likes.count %>
+<% end %>
+<%= link_to "編集する", edit_heart_path(@heart.id) %>
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @heart.liked_users.each do |user| %>
+<li><%= user.email %></li>
+<% end %>   
+  <%= link_to "編集する", edit_heart_path(@heart.id) %>
+  <%= button_to "削除する", heart_path(@heart.id), method: :delete %> 
+  </div>
+
+<%= link_to "Smile一覧に戻る", hearts_path %>
