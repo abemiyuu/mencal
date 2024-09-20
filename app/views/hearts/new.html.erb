@@ -1,17 +1,43 @@
-<h1>(自分の題名)</h1>
-<h3>新規投稿ページ</h3>
-<%= form_for @heart do |f| %>
-    <div class="field">
-        <%= f.label :いまのきもち %>
-        <%= f.text_field :body, :size => 30 %>
+<div class="heart-form">
+  <div class ="toukou">
+    <div class="daimei">
+      <h1>Posting</h1>
+      <h2>投稿</h2>
+    </div>
+    <div class="gennkidayo">
+      <p>①今の率直な気持ちや<br>（楽しかったこと、愚痴など、なんでもOK！）</br></p>
+      <p>②保健室での体験、おすすめの病院などを</p>
+      <p>みんなでシェアしてみよう！</p>
     </div>
 
-    <div class="field">
-        <%= f.label :投稿先  %>
-        <%= f.select:genre, 
-        [["みんなのつぶやき", "みんなのつぶやき"], 
-        ["おすすめの場所", "おすすめの場所"]], include_blank: "選択して下さい" %>
+    <%= form_for @heart do |f| %>
+      <div class="field">
+        <div class="docchi">
+          <%= f.label :どっちに投稿する？ %>
+          <%= f.select :genre, 
+          [["みんなのつぶやき", "みんなのつぶやき"], 
+          ["おすすめの場所", "おすすめの場所"]], include_blank: "選択して下さい" %>
+        </div>
+      </div>
+  </div>
+  <div class ="toukou-back">
+    <div class ="komennto">
+      <div class="hakidashi">
+        <%= f.label :つぶやきページ%>
+          <div class="field">
+            <%= f.text_area :body, style: "width: 500px; height: 250px;" %>
+        </div>
+      </div>
+    <div class ="yokonarabi">
+      <div class ="tsubuyaku">
+        <%= f.submit "つぶやく！" %>
+      </div>
+      <% end %>
+      <div class ="modoru">
+        <%= link_to "一覧に戻る", hearts_path %>
+      </div>
     </div>
-    <%= f.submit "投稿する" %>
-<% end %>
-<%= link_to "一覧に戻る", hearts_path %>
+    
+    </div>
+  </div>
+</div>

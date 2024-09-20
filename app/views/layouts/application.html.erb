@@ -8,11 +8,37 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
     <header>
-      <h1>タイトル</h1>
+      <div class ="mencal">
+        <h1><%= link_to "mencal", hearts_path %></h1>
+      </div>
+      <div class ="mencal">
+        <h2>こころとからだの健康観察</h2>
+      </div>
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
+          <div class="menu-content">
+            <ul>
+                <li>
+                    <%= link_to "✿診断スタート⇒", new_mind_path %>
+                </li>
+                <li>
+                    <%= link_to "みんなのつぶやき", hearts_tsubuyaki_path %>
+                </li>
+                <li>
+                    <%= link_to "おすすめの場所", hearts_taiken_path %>
+                </li>
+            </ul>
+          </div>
+        </div>
     </header>
 
     <main>

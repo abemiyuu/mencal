@@ -1,3 +1,497 @@
 // Place all the styles related to the hearts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// .
+// .mainpage{
+//     display:flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+// .genkido{
+//     width: 861px;
+//     height: 185px;
+//     flex-shrink: 0;
+//     color: #000;
+//     font-family: Inter;
+//     font-size: 20px;
+//     font-style: normal;
+//     line-height: normal;
+// }
+.block1{
+    background-color:#FFF3DC;
+    height: 500px;
+}
+
+
+.block2{
+    background-color:#FAD7DE;
+    height: 500px;
+    width: auto;
+    border-radius: 50px;
+}
+
+
+.block2-back{
+    background: linear-gradient(to bottom, #FFF3DC 50%,#FFF3DC 50%);
+}
+
+
+.block3{
+    background-color:#FFF3DC;
+    height: 500px;
+    
+}
+
+
+.daimei{
+    margin-left: 30px;
+    color:rgb(73, 19, 19);
+    text-decoration: underline;
+    text-decoration-color: #db8294;
+    text-decoration-thickness: 2px;
+}
+
+.gennkido{
+    text-align:center;
+    font-size: 25px;
+    margin: 100px;
+}
+
+
+.gennkidayo{
+    text-align:center;
+    font-size: 25px;
+    margin: 50px;
+}
+
+
+.sinndann{
+    font-size: 35px;
+    font-weight: 700;
+    background-color:#FFc794;
+    height:100px;
+    width:500px;
+    border-radius: 9999px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 2px solid;
+    border-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+
+.sinndann:hover {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+
+
+.sinndann a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.tsububasho{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 70px;
+}
+
+
+.tsububasho .item {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-radius: 50px;
+    margin: 0;
+    padding: 0 0 20px 0;
+    box-sizing: border-box;
+    background: #d6f59c;
+    border: 2px solid;
+    border-color: #ffffff;
+}
+
+
+.tsububasho .item .image img {
+    width: 100%;
+}
+
+
+.tsububasho .item .title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    color:rgb(73, 19, 19)
+}
+
+
+.tsububasho .item .link {
+    margin: 20px 0 0;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.tsububasho .item .link a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    background: #a5db40;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius:  4px;
+    transition: transform 1.0s ease;
+}
+
+
+.tsububasho .item .link:hover{
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+
+.fukidashi{
+    width:100px;
+    height: 100px;
+    padding-left: 150px;
+}
+
+
+
+.toukou{
+    background-color:#FFF3DC;  
+    height:500px; 
+}
+
+
+.toukou-back{
+    background: linear-gradient(to bottom, #FFF3DC 50%,#FFF3DC 50%);
+}
+
+
+.komennto{
+    background-color:#FAD7DE;
+    height:500px;
+    width:auto;
+    border-radius: 50px;  
+}
+
+
+.minnnano{
+    padding:0;
+    background: #d6f59c;
+    overflow: hidden;
+    font-size: 80%;
+}
+
+
+.minnnanotitle{
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    background-color: #a5db40;
+
+}
+
+
+.contents {
+    width: 100%;
+    margin: 1.5em 0;
+    overflow: hidden;
+}
+
+.contents .faceicon {
+    float: left;
+    margin-right: -90px;
+    width: 80px;
+}
+
+.contents .faceicon img{
+    width: 100%;
+    height: auto;
+    border: solid 3px #d7ebfe;
+    border-radius: 50%;
+}
+
+.contents .chatting {
+    width: 100%;
+}
+
+
+.dli-user-circle-fill {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    line-height: 1;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border: 0.1em solid currentColor;
+    border-radius: 50%;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.dli-user-circle-fill > span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.dli-user-circle-fill > span::before, .dli-user-circle-fill > span::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background: currentColor;
+    box-sizing: border-box;
+}
+
+.dli-user-circle-fill > span::before {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    margin-bottom: 0.05em;
+}
+
+.dli-user-circle-fill > span::after {
+    width: 2.4em;
+    height: 0.9em;
+    border-bottom: 0;
+    border-radius: 50% / 100% 100% 0 0;
+}
+
+
+
+.text {
+    display: inline-block;
+    position: relative; 
+    margin: -70px 0 0 100px;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.text:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 10px; 
+    left: -24px;
+    border: 12px solid transparent;
+    border-right: 12px solid #fff;
+}
+
+.text p {
+    margin: 0;
+    padding: 0;
+}
+
+.osusume{
+    padding:0;
+    background: #d6f59c;
+    overflow: hidden;
+    font-size: 80%;
+}
+
+
+.osusumetitle{
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    background-color: #a5db40;
+
+}
+
+
+
+
+
+.hakidashi{
+    text-align:left;
+    font-size: 25px;
+    padding-left: 550px;
+}
+
+
+.docchi{
+    font-size: 35px;
+    background-color:#FFc794;
+    color:#ffffff;
+    height:100px;
+    width:500px;
+    border-radius: 9999px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: x-large;
+    border: 2px solid;
+    border-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+
+.docchi:hover {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+
+
+#genkiChart{
+    background-color: #ffffff;
+}
+
+
+.tsubuyaku input{
+    font-size: 35px;
+    font-weight: 650px;
+    background-color:#ff6d8b;
+    color:#ffffff;
+    height:190px;
+    width:190px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 550px;
+    margin-right: auto;
+    margin-top: 5px;
+    border: 2px solid;
+    border-color: #ffffff;
+    font-family: "Noto Serif JP", serif;
+    transition: transform 0.3s ease;
+}
+
+
+.tsubuyaku input:hover {
+    transform: scale(1.1);
+}
+
+
+
+.modoru{
+    font-size: 35px;
+    font-weight: 650px;
+    background-color:#f894a8;
+    height:190px;
+    width:190px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right:530px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+
+.modoru:hover{
+    transform: scale(1.1);
+}
+
+
+.modoru a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.yokonarabi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.smile{
+    background-color: white;
+    width:700px;
+    height: auto;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom:100px;
+    border: 2px solid;
+    border-color:#a5db40;
+    font-size: larger;
+    color:rgb(73, 19, 19);
+}
+
+
+.sakujo input{
+    font-size: 15px;
+    font-weight: 650px;
+    background-color:#a5db40;
+    color:#ffffff;
+    height:80px;
+    width:80px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin-right: auto;
+    margin-top: 5px;
+    border: 2px solid;
+    border-color: #ffffff;
+    font-family: "Noto Serif JP", serif;
+    transition: transform 0.3s ease;
+}
+
+
+.sakujo input:hover {
+    transform: scale(1.1);
+}
+
+
+.ichirann{
+    font-size: 15px;
+    font-weight: 650px;
+    background-color:#e1e442;
+    height:80px;
+    width:80px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right:200px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+
+.ichirann:hover{
+    transform: scale(1.1);
+}
+
+
+.ichirann a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.sakuichi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

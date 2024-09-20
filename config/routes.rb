@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   resources :stars
   root 'hearts#index'
+  get'minds/brank' => 'minds#brank'
   resources :minds
+  
 end
 

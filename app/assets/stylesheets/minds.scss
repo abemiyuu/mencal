@@ -1,3 +1,137 @@
 // Place all the styles related to the minds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.shitsumon{
+background-color:#FAD7DE; 
+height:300px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.koumoku{
+    background-color: white;
+    width:700px;
+    height: 200px;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border: 2px solid;
+    border-color:#db8294;
+    font-size: larger;
+}
+
+.col-12{
+    z-index:1;
+}
+.col-6{
+    text-align: left;
+    padding-left: 200px;
+}
+
+.underline p {
+    text-decoration: none; /* 既存の下線は削除 */
+    font-size: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.underline p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 2px;
+    background-color: #db8294;
+    transform: scaleX(0); 
+    transform-origin: left; 
+    animation: underline-animation 0.5s ease-in-out forwards; 
+}
+
+@keyframes underline-animation {
+    to {
+        transform: scaleX(1);
+    }
+}
+.shitsu{
+background-color:#FAD7DE; 
+height:200px; 
+display: flex; 
+justify-content: center;
+align-items: center;  
+}
+
+
+.sindanbotan input{
+    font-size: 35px;
+    font-weight: 650px;
+    background-color:#FFc794;
+    color:#ffffff;
+    height:100px;
+    width:500px;
+    border-radius: 9999px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 2px solid;
+    border-color: #ffffff;
+    font-family: "Noto Serif JP", serif;
+    transition: transform 0.3s ease;
+}
+
+.sindanbotan input:hover {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+
+
+.kekka{
+background-color:#FFF3DC;
+height:500px;    
+}
+
+.kekka-back{
+    background: linear-gradient(to bottom,#FFF3DC 50%, #FFF3DC 50%);
+}
+
+
+.hosikekka{
+    background-color: white;
+    width:700px;
+    height: 150px;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid;
+    border-color: #d3ae6b;
+    font-size: larger
+    
+}
+
+
+.hosicolor{
+    color: #e7eb0f;
+    -webkit-text-stroke: 1px #3c408d;
+    text-stroke: 1px #3c408d;
+}
+
+
+
+
+
+.kiroku{
+background-color:#FAD7DE; 
+height:500px;
+width: auto;
+border-radius: 50px;  
+}
+
+

@@ -5,24 +5,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.lecture_form{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 300px;
-    margin: 30px;
-  }
-  .name_field{
-    width: 200px;
-    margin-bottom: 30px;
-  }
+// .lecture_form{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     width: 300px;
+//     margin: 30px;
+//   }
+//   .name_field{
+//     width: 200px;
+//     margin-bottom: 30px;
+//   }
 
-/*　以下新規投稿ページの星用のCSS　*/
+// /*　以下新規投稿ページの星用のCSS　*/
+
+
+
+.post_form{  
+  background-color: white;
+  width:20%;
+  padding-left:13%;
+  padding-right:10%;
+  height: 150px;
+  border-radius: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 2px solid;
+  border-color: #db8294;
+  font-size: larger
+}
+
+
+.hosihosi{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
   .post_form{
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+    
   }
   .post_form input[type='radio']{
     display: none;
@@ -77,3 +106,33 @@
     border: 1px solid #ccc;
   }
   
+
+.post_form{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.post_form input[type='radio']{
+  display: none;
+}
+.post_form label{
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 30px; /*星の大きさを変更するときはここ*/
+}
+.post_form label .text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
+  color: gray;
+}
+.post_form label:hover,
+.post_form label:hover ~ label,
+.post_form input[type='radio']:checked ~ label{
+  color: #ffcc00;
+}

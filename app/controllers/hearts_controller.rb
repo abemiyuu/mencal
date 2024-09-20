@@ -30,7 +30,8 @@ class HeartsController < ApplicationController
     end
     def show
         @heart = Heart.find(params[:id])
-    end  
+        @source = params[:source]
+    end 
     def edit
         @heart = Heart.find(params[:id])
     end

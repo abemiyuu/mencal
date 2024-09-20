@@ -1,18 +1,45 @@
-<h1>今日のあなたの元気度は？</h1>
-<h3>こころとからだのチェックリスト</h3>
-<%= link_to "✿診断を始める✿", new_mind_path, class: "link" %>
-<p>自分の気持ちをシェアしよう</p>
-<%= link_to "みんなのつぶやき", hearts_tsubuyaki_path %>
-<p>自分の体験をシェアしよう</p>
-<%= link_to "おすすめの場所", hearts_taiken_path %>
+<div class = "block1">
+    <div class="daimei">
+      <h1>Today’s health observation</h1>
+      <h2>今日の健康観察</h2>
+    </div>
+    <div class ="gennkido">
+        <p>今日のあなたの「元気度」は…？</p>
+        <div class ="sinndann"> 
+            <%= link_to "✿診断スタート⇒", new_mind_path, class: "link" %>
+        </div>
+    </div>   
+</div>
+<div class= "block2-back">
+  <div class = "block2">
+    <div class="daimei">
+      <h1>Share with friends</h1>
+      <h2>友達とシェアしよう</h2>
+    </div>
+        <div class="tsububasho">
+          <div class="item">
+            <%= image_tag 'minnnanotsubuyaki.png', class:"fukidashi"%>
+            <p class="title">自分の気持ちをシェアしよう</p>
+            <p class="link"><%= link_to "みんなのつぶやき", hearts_tsubuyaki_path %></p>
+          </div>
+          <div class="item">
+            <%= image_tag 'osusumenobasho.png', class:"fukidashi"%>  
+            <p class="title">自分の体験をシェアしよう</p>
+            <p class="link"><%= link_to "おすすめの場所", hearts_taiken_path %></p>
+          </div>
+        </div>
+  </div>
+</div>
 
-
-
-<h3>記録カレンダー</h3>
-<div style="width: 800px; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;"> 
-  <button id="prevButtorails sn">&lt;</button>
-  <canvas id="genkiChart"></canvas> 
-  <button id="nextButton">&gt;</button>
+<div class = "block3">
+    <div class="daimei">
+      <h1>Health calender</h1>
+      <h2>健康カレンダー</h2>
+    </div>
+        <div style="width: 800px; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;"> 
+        <button id="prevButtorails sn">&lt;</button>
+        <canvas id="genkiChart"></canvas> 
+        <button id="nextButton">&gt;</button>
 </div>
 
 <style>

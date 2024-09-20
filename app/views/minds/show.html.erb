@@ -1,71 +1,84 @@
 <div class="intoro">
-  <h5>診断結果</h5>
-  <p>今日のあなたの元気度は…</p>
-</div>
-<div class="mind-container">
-  <% total_score = @mind.question1.to_i + @mind.question2.to_i + @mind.question3.to_i + @mind.question4.to_i + @mind.question5.to_i %>
-  <% case total_score %>
-  <% when 5..6 %>
-    <h1>★☆☆☆☆</h1>
-    <p>からだの調子が優れなかったり、気持ちが落ち着かない一日かも</p>
-    <p>おかしいなと感じたら、すぐに保健室に行ったり、先生に相談してみよう！</p>
-  <% when 7..9 %>
-    <h1>★★☆☆☆</h1>
-    <p>頑張りすぎてからだやこころがかなり疲れてきているかも</p>
-    <p>無理をしすぎず、少しでも困ったことや気になることがあったら先生や友人に相談してみよう！</p>
-  <% when 10..12 %>
-    <h1>★★★☆☆</h1>
-    <p>からだやこころが少し疲れてきているかも</p>
-    <p>無理は禁物。今日は意識的に休憩を入れてみよう！</p>
-  <% when 13..14 %>
-    <h1>★★★★☆</h1>
-    <p>おおむね元気な一日</p>
-    <p>今日も自分のペースで進んでいこう！</p>
-  <% when 15 %>
-    <h1>★★★★★</h1>
-    <p>とっても元気な一日</p>
-    <p>今日も一日元気に頑張っていこう！</p>
-  <% else %>
-    <h1>判定できず…</h1>
-    <p>1個前のページに戻ってもう一度診断してみよう！</p>
-  <% end %>
+  <div class ="kekka">
+    <div class="daimei">
+      <h1>Diagnostic result</h1>
+      <h2>診断結果</h2>
+    </div>
+    <div class="gennkidayo">
+      <p>今日のあなたの「元気度」は…？</p>
+    </div>
+  <div class="mind-container">
+    <div class="hosikekka">
+      <% total_score = @mind.question1.to_i + @mind.question2.to_i + @mind.question3.to_i + @mind.question4.to_i + @mind.question5.to_i %>
+      <% case total_score %>
+      <% when 5..6 %>
+        <div class="hosicolor">
+          <h1>★☆☆☆☆</h1>
+        </div>
+        <p>からだの調子が優れなかったり、気持ちが落ち着かない一日かも</p>
+        <p>おかしいなと感じたら、すぐに保健室に行ったり、先生に相談してみよう！</p>
+      <% when 7..9 %>
+        <div class="hosicolor">
+          <h1>★★☆☆☆</h1>
+        </div>
+        <p>頑張りすぎてからだやこころがかなり疲れてきているかも</p>
+        <p>無理をしすぎず、少しでも困ったことや気になることがあったら<br>先生や友人に相談してみよう！</br></p>
+      <% when 10..12 %>
+        <div class="hosicolor">
+          <h1>★★★☆☆</h1>
+        </div>
+        <p>からだやこころが少し疲れてきているかも</p>
+        <p>無理は禁物。今日は意識的に休憩を入れてみよう！</p>
+      <% when 13..14 %>
+        <div class="hosicolor">
+          <h1>★★★★☆</h1>
+        </div>
+        <p>おおむね元気な一日</p>
+        <p>今日も自分のペースで進んでいこう！</p>
+      <% when 15 %>
+        <div class="hosicolor">
+          <h1>★★★★★</h1>
+        </div>
+        <p>とっても元気な一日</p>
+        <p>今日も一日元気に頑張っていこう！</p>
+      <% else %>
+        <h1>判定できず…</h1>
+        <p>1個前のページに戻ってもう一度診断してみよう！</p>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
 <%= form_with model: @star, local: true do |f| %>
-  <h5>総合評価</h5>
-  <div class="post_form">
-    <%= f.radio_button :genki, 5, id: 'star1' %>
-    <label for="star1"><span class="text">最高</span>★</label>
-    <%= f.radio_button :genki, 4, id: 'star2' %>
-    <label for="star2"><span class="text">良い</span>★</label>
-    <%= f.radio_button :genki, 3, id: 'star3' %>
-    <label for="star3"><span class="text">普通</span>★</label>
-    <%= f.radio_button :genki, 2, id: 'star4' %>
-    <label for="star4"><span class="text">悪い</span>★</label>
-    <%= f.radio_button :genki, 1, id: 'star5' %>
-    <label for="star5"><span class="text">最悪</span>★</label>
+  <div class="kekka-back">
+    <div class="kiroku">
+      <div class="daimei">
+        <h1>Record</h1>
+        <h2>記録しよう</h2>
+      </div>
+      <div class="post_form">
+            <%= f.radio_button :genki, 1, id: 'star1' %>
+            <label for="star1">★</label>
+            <%= f.radio_button :genki, 2, id: 'star2' %>
+            <label for="star2">★</label>
+            <%= f.radio_button :genki, 3, id: 'star3' %>
+            <label for="star3">★</label>
+            <%= f.radio_button :genki, 4, id: 'star4' %>
+            <label for="star4">★</label>
+            <%= f.radio_button :genki, 5, id: 'star5' %>
+            <label for="star5">★</label>
+      </div>
+      <div class="sindanbotan">
+        <%= f.submit '送信' %>
+      </div>
+    </div>
   </div>
-  <%= f.submit '送信' %>
 <% end %>
 
 
-<div class="heart-form">
-  <h1>つぶやき投稿</h1>
-  <h3>新規投稿ページ</h3>
-  <%= form_for @heart do |f| %>
-    <div class="field">
-        <%= f.label :いまのきもち %>
-        <%= f.text_field :body, size: 30 %>
-    </div>
 
-    <div class="field">
-        <%= f.label :投稿先 %>
-        <%= f.select :genre, 
-        [["みんなのつぶやき", "みんなのつぶやき"], 
-        ["おすすめの場所", "おすすめの場所"]], include_blank: "選択して下さい" %>
-    </div>
-    <%= f.submit "投稿する" %>
-  <% end %>
-  <%= link_to "一覧に戻る", hearts_path %>
-</div>
+
+
+
+
